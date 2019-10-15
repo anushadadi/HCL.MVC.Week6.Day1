@@ -1,0 +1,31 @@
+﻿@model HCL.MVC.Week6.Day1.Models.CustomerC
+@{
+    ViewBag.Title = "SpecificDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<h2 >Our Customer Details</h2>
+
+@if (Model != null)
+{
+    <h2>@Model.CustomerName</h2>
+    <ul>
+        
+        <li><b>Date Of Birth</b> : @Model.DOB.Value.ToShortDateString()</li>
+       
+        <li> <b>Gender</b> : @Model.Gender</li>
+        
+        <li><b>City</b> : @Model.City</li>
+        
+
+
+
+    </ul>
+
+}
+else
+{
+    <text>No Record</text>
+}
+
+    <h3>@Html.ActionLink("Back to List", "Index", "Customer")</h3>

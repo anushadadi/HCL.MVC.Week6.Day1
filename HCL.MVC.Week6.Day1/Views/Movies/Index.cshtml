@@ -1,0 +1,27 @@
+﻿@model List<HCL.MVC.Week6.Day1.Models.MovieC>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies Available</h2>
+@Html.ActionLink("New Movie","Create","Movies")
+<table class="table table-bordered table-hover alert">
+    <tr>
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>
+                @Html.ActionLink(s.Name, "SpecificDetails", "Movies", new { Id = s.Id }, null)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
